@@ -4,8 +4,11 @@
 html, body {
     font: 16px 'Open Sans',sans-serif;/*root*/
     margin:0;
-    background: linear-gradient(to bottom left, #BCE0FD,#FFF);
-    background-repeat: no-repeat;
+    background: linear-gradient(to bottom left, #2699FB,#FFF) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
 }
 
 h1,h2,h3,p,ul{
@@ -18,14 +21,29 @@ h1,h2,h3,p,ul{
 *{
     box-sizing: border-box;
 }
-.title {
-  width: 800px;
-  margin: 10px auto;
-  font-weight: bold;
-}
-.formulaire {
+.Header {
   margin: 0 auto;
-  width: 400px;
+  padding:0;
+  max-width: 400px;
+  width: 100%;
+}
+.logo {
+  display: block;
+  margin: 0 auto 20px;
+}
+.arrow{
+  margin: 20px auto 0;
+  width: 40px;
+}
+
+.Bienvenue>h1 {
+  text-align: center;
+}
+
+.formulaire, .Bienvenue, .App {
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
 }
 
 input {
@@ -57,7 +75,7 @@ input:focus, .box:focus
   background-color: #2699FB;
   border: none;
   color: white;
-  padding: 8px 40px;
+  padding: 10px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -74,6 +92,8 @@ input:focus, .box:focus
 
 p {
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .dejamembre {
