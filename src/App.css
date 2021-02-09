@@ -24,7 +24,64 @@ h1,h2,h3,p,ul{
   font-weight: bold;
 }
 .formulaire {
-  width: 800px;
-  margin: 10px auto;
-  /* width: 800px; */
+  margin: 0 auto;
+  width: 400px;
 }
+
+input {
+  width:100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: none;
+}
+input::placeholder {
+  color:#2699FB;
+}
+
+input:focus, .box:focus
+{
+  outline-style: none;
+  outline: none;
+}
+
+.box {
+  vertical-align: top;
+  height: 2.5em;
+  color:#000;
+}
+
+
+.button{
+  width: 100%;
+  background-color: #2699FB;
+  border: none;
+  color: white;
+  padding: 8px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px 2px 0px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.button:focus {
+  background-color: #51AEFE;
+  outline-style: none;
+}
+
+p {
+  text-align: center;
+}
+
+.dejamembre {
+  text-align: right;
+}
+
+a {
+  text-decoration: underline;
+  color: #2699FB;
+}
+
