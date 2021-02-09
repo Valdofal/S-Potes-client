@@ -34,27 +34,34 @@ class Formulaire extends Component {
    handleBirthdate(event){
      this.setState({birthdate: event.target.value})
    }
-   handleSubmit(event){
-     let data = {
-       "email":this.state.email,
-       "password":this.state.password,
-       "firstName":this.state.firstName,
-       "lastName":this.state.lastName,
-       "birthDate":this.state.birthdate
-     }
-     fetch('http://localhost:4567/api/register/',{
-       method: 'POST',
-       body: JSON.stringify(data)
-     }).then(response => console.log(response.body))
-     this.props.history.push('/Bienvenue')
-     event.preventDefault()
+
+   
+   handleSubmit(){
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+    let urlencoded = new URLSearchParams()
+    urlencoded.append("email",this.state.email)
+    urlencoded.append("password",this.state.password)
+    urlencoded.append("firstName",this.state.firstName)
+    urlencoded.append("lastName",this.state.lastName)
+    urlencoded.append("birthDate",this.state.birthdate)
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: urlencoded,
+      redirect: 'follow'
+    }
+    fetch("http://localhost:4567/api/register", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error))
    }  
   
   render(){
 
     return (
       <div class = "formulaire">
-        <form  action ="/Bienvenue" onSubmit={this.handleSubmit}>
+        <form   action='/Bienvenue' onSubmit={this.handleSubmit}>
           <input value={this.state.email} onChange={this.handleEmail} class="box" type="email" name="email" id="email" placeholder="Adresse e-mail" required /> <br/>
           <input value={this.state.password} onChange={this.handlePassword} class="box" type="password" name="password" id="password" placeholder="Mot de passe" required /> <br/>
           <input value={this.state.firstName} onChange={this.handleFirstName} class="box" type="text" name="firstName" id="firstName" placeholder="Prénom" required /><br/>
