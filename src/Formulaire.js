@@ -1,4 +1,3 @@
-import axios from "axios"
 import React,{Component} from "react"
 
 class Formulaire extends Component {
@@ -36,12 +35,18 @@ class Formulaire extends Component {
      this.setState({birthdate: event.target.value})
    }
    handleSubmit(event){
-     event.preventDefault()
-     let data = "email="+this.state.email+"&password="+this.state.password+"&firstName="+this.state.firstName+"&lastName="+this.state.lastName+"&birthdate="+this.state.birthdate
-     fetch('http://localhost:4567/api/register',{
+     let data = {
+       "email":this.state.email,
+       "password":this.state.password,
+       "firstName":this.state.firstName,
+       "lastName":this.state.lastName,
+       "birthDate":this.state.birthdate
+     }
+     fetch('http://localhost:4567/api/register/',{
        method: 'POST',
        body: JSON.stringify(data)
      }).then(response => console.log(response.body))
+     this.props.history.push('/Bienvenue')
      event.preventDefault()
    }  
   
@@ -49,7 +54,7 @@ class Formulaire extends Component {
 
     return (
       <div class = "formulaire">
-        <form action="/api/register" method="POST" onSubmit={this.handleSubmit}>
+        <form  action ="/Bienvenue" onSubmit={this.handleSubmit}>
           <input value={this.state.email} onChange={this.handleEmail} class="box" type="email" name="email" id="email" placeholder="Adresse e-mail" required /> <br/>
           <input value={this.state.password} onChange={this.handlePassword} class="box" type="password" name="password" id="password" placeholder="Mot de passe" required /> <br/>
           <input value={this.state.firstName} onChange={this.handleFirstName} class="box" type="text" name="firstName" id="firstName" placeholder="Prénom" required /><br/>
