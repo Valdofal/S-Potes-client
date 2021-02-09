@@ -36,9 +36,11 @@ h1,h2,h3,p,ul{
   width: 40px;
 }
 
+.Bienvenue>h1 {
+  text-align: center;
+}
 
-
-.formulaire {
+.formulaire, .Bienvenue, .App {
   margin: 0 auto;
   max-width: 400px;
   width: 100%;

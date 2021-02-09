@@ -1,4 +1,9 @@
 import React from 'react'
+import { BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+    } from "react-router-dom"
 
 function Formulaire() {
     return (
@@ -10,7 +15,7 @@ function Formulaire() {
         <input class="box" type="text" name="lastName" id="lastName" placeholder="Nom" required /> <br/>
         <input class="box" type="date" name="birthdate" id="birthdate" placeholder="jj/mm/aaaa" required /> <br/>
         <p> En créant un compte, vous acceptez de vous conformer à la <a> Politique de confidentialité </a>et aux <a>Conditions Générales</a></p>
-        <input type="submit" id="submitDetails" name="submitDetails" value = "S'INSCRIRE" class="button"/>
+        <Link to="/Bienvenue"><input type="submit" id="submitDetails" name="submitDetails" value = "S'INSCRIRE" class="button"/> </Link>
       </form>
       <p class="dejamembre"> Déjà membre ? <a> Se connecter </a> </p>
     </div>
