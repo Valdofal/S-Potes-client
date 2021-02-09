@@ -12,7 +12,6 @@ function Register(){
     <div>
     <Header />
     <Formulaire />
-    <Connexion />
     </div>
     )
 }
