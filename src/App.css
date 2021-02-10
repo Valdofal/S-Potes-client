@@ -123,3 +123,8 @@ select {
   margin: 10px 2px 2px 0px;
   cursor: pointer;
 }
+
+.googlemap{
+  width:'100vh';
+  height:'100vw'
+}

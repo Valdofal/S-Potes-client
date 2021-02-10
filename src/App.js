@@ -7,6 +7,7 @@ import Bienvenue from './Bienvenue.js'
 import CreationEvenement from './CreationEvenement.js'
 import Sport from './Sport'
 import Gender from './Gender.js'
+import Map from './Map'
 import { BrowserRouter as Router,
 Switch,
 Route,
@@ -54,6 +55,9 @@ function App() {
             </Route>
             <Route path="/Password">
               <ForgetMDP/>
+            </Route>
+            <Route path ='Map'>
+              <Map/>
             </Route>
 
         </Switch>
