@@ -105,3 +105,7 @@ a {
   color: #2699FB;
 }
 
+.creationevenement>h1 {
+  text-align: center;
+  padding-bottom: 10px;
+}

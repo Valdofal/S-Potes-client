@@ -3,6 +3,7 @@ import React from 'react'
 import Header from './Header.js';
 import Register from './Register.js'
 import Bienvenue from './Bienvenue.js'
+import CreationEvenement from './CreationEvenement.js'
 import { BrowserRouter as Router,
 Switch,
 Route,
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/Bienvenue">
               <Bienvenue/>
+            </Route>
+            <Route path="/CreationEvenement">
+                <CreationEvenement />
             </Route>
 
         </Switch>
