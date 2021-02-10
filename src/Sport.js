@@ -1,10 +1,20 @@
 import React,{Component} from "react"
-import Header from './Header.js'
+import Select from 'react-select'
 import { BrowserRouter as Router,
 Switch,
 Route,
 Link
 } from "react-router-dom"
+
+const options = [
+  { value: 'football', label: 'Football'},
+  { value: 'basketball', label: 'Basketball' }  ,
+  { value: 'tennis', label: 'Tennis'}    
+]
+
+const Choix = () => (
+  <Select options={options} />
+)
 
 
 class Sport extends Component {
@@ -21,7 +31,7 @@ class Sport extends Component {
     }
  
     handleSport(event){
-      this.setState({email: event.target.value})
+      this.setState({sport: event.target.value})
     }
     
  
@@ -37,11 +47,12 @@ class Sport extends Component {
        body: urlencoded,
        redirect: 'follow'
      }
-     fetch("http://localhost:4567/api/register", requestOptions)
+     fetch("http://localhost:4567/api/sport", requestOptions)
      .then(response => response.text())
      .then(result => console.log(result))
      .catch(error => console.log('error', error))
     }  
+
     render() {
 
     return (
@@ -49,10 +60,7 @@ class Sport extends Component {
             <Link to="/Gender"><img class="arrow" src="../arrow.png" /> </Link>
             <img class="logo" src="../logo.png" />
             <h1> Par quels sports seriez-vous potentiellement intéressé ?</h1>
-            <select  value={this.state.sport} onChange={this.handleSport}>
-                <option value="Basket"> Basket </option>
-                <option value="Football"> Football </option>
-            </select>
+            <Choix />
             <input type="submit" id="submitDetails" name="submitDetails" value = "S'INSCRIRE" class="button"/>
 
         </div>
