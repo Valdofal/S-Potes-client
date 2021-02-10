@@ -8,7 +8,7 @@ import { BrowserRouter as Router,
 
 
 
-class CreationEvenement extends Component {
+class CreateEvent extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -53,10 +53,11 @@ class CreationEvenement extends Component {
   }  
   render(){
     return (
-    <div class="creationevenement">
-        <Header />
+    <div class="createevent">
+        <Link to="/MenuPrincipal"><img class="arrow" src="../arrow.png" /> </Link>
+        <img class="logo" src="../logo.png" />
         <h1> Créer votre événement </h1>
-        <form action="/api/creationevenement" method="POST" onSubmit={this.handleSubmit}>
+        <form action="/selectDate" method="POST" onSubmit={this.handleSubmit}>
           <input value={this.state.name} onChange={this.handleName} class="box" type="text" name="name" id="name" placeholder="Nom de l'événement" required /> <br/>
           <input value={this.state.address} onChange={this.handleAddress} class="box" type="text" name="address" id="address" placeholder="Adresse de l'événement" required /> <br/>
           <input value={this.state.sport} onChange={this.handleSport} class="box" type="text" name="sport" id="sport" placeholder="Choisir un sport" required /><br/>
@@ -64,10 +65,9 @@ class CreationEvenement extends Component {
           <input value={this.state.information} onChange={this.handleInformation}class="box" type="text" name="information" id="information" placeholder="Informations supplémentaires" required /> <br/>
           <input type="submit" id="submitDetails" name="submitDetails" value = "SUIVANT" class="button"/>
         </form>
-    
     </div>
     )
   }
 }
 
-export default CreationEvenement;
+export default CreateEvent;

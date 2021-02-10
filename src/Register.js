@@ -1,17 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import Header from './Header.js';
 import Formulaire from './Formulaire.js'
-import Connexion from './Connexion.js'
-
+import { BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+    } from "react-router-dom"
 
 
 function Register(){
     return (
     <div>
-    <Header />
-    <Formulaire />
+    <Link to="/"><img class="arrow" src="../arrow.png" /> </Link>
+    <img class="logo" src="../logo.png" />    <Formulaire />
     </div>
     )
 }

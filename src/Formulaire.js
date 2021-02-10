@@ -61,7 +61,7 @@ class Formulaire extends Component {
 
     return (
       <div class = "formulaire">
-        <form   action='/Bienvenue' onSubmit={this.handleSubmit}>
+        <form action='/Bienvenue' onSubmit={this.handleSubmit}>
           <input value={this.state.email} onChange={this.handleEmail} class="box" type="email" name="email" id="email" placeholder="Adresse e-mail" required /> <br/>
           <input value={this.state.password} onChange={this.handlePassword} class="box" type="password" name="password" id="password" placeholder="Mot de passe" required /> <br/>
           <input value={this.state.firstName} onChange={this.handleFirstName} class="box" type="text" name="firstName" id="firstName" placeholder="Prénom" required /><br/>
