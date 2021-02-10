@@ -4,6 +4,8 @@ import Header from './Header.js';
 import Register from './Register.js'
 import Bienvenue from './Bienvenue.js'
 import CreationEvenement from './CreationEvenement.js'
+import Sport from './Sport'
+import Gender from './Gender.js'
 import { BrowserRouter as Router,
 Switch,
 Route,
@@ -35,8 +37,17 @@ function App() {
             <Route path="/Bienvenue">
               <Bienvenue/>
             </Route>
-            <Route path="/CreationEvenement">
+            <Route path="/createEvent">
                 <CreationEvenement />
+            </Route>
+            <Route path="/selectDate">
+              <selectDate />
+            </Route>
+            <Route path="/Gender">
+              <Gender/>
+            </Route>
+            <Route path="/Sport">
+              <Sport />
             </Route>
 
         </Switch>

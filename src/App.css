@@ -105,7 +105,21 @@ a {
   color: #2699FB;
 }
 
-.creationevenement>h1 {
+.createevent>h1 {
   text-align: center;
   padding-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  background-color: #2699FB;
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px 2px 0px;
+  cursor: pointer;
 }
