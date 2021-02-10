@@ -2,12 +2,15 @@ import './App.css';
 import React from 'react'
 import Header from './Header.js';
 import Register from './Register.js'
+import Connecter from './Connecter.js'
 import Bienvenue from './Bienvenue.js'
 import { BrowserRouter as Router,
 Switch,
 Route,
 Link
 } from "react-router-dom"
+import ForgetMDP from './ForgetMDP';
+
 
 
 
@@ -29,10 +32,13 @@ function App() {
                 <Register />
             </Route>
             <Route path="/Connexion">
-
+                <Connecter />
             </Route>
             <Route path="/Bienvenue">
               <Bienvenue/>
+            </Route>
+            <Route path="/Password">
+              <ForgetMDP/>
             </Route>
 
         </Switch>
