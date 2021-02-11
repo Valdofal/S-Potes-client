@@ -8,14 +8,14 @@ import CreationEvenement from './CreationEvenement.js'
 import Sport from './Sport'
 import Gender from './Gender.js'
 import Map from './Map'
-import { BrowserRouter as Router,
-Switch,
-Route,
-Link
-} from "react-router-dom"
+import Profil from './Profil'
 import ForgetMDP from './ForgetMDP';
-
-
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 
 
 function App() {
@@ -56,8 +56,11 @@ function App() {
             <Route path="/Password">
               <ForgetMDP/>
             </Route>
-            <Route path ='Map'>
+            <Route path ='/Map'>
               <Map/>
+            </Route>
+            <Route path="/Profil">
+              <Profil/>
             </Route>
 
         </Switch>
