@@ -10,6 +10,7 @@ import Gender from './Gender.js'
 import Map from './Map'
 import Profil from './Profil'
 import ForgetMDP from './ForgetMDP';
+import Date from './Date'
 import { 
   BrowserRouter as Router,
   Switch,
@@ -61,6 +62,9 @@ function App() {
             </Route>
             <Route path="/Profil">
               <Profil/>
+            </Route>
+            <Route path = '/Date'>
+              <Date/>
             </Route>
 
         </Switch>
