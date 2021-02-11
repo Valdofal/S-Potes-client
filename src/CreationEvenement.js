@@ -12,11 +12,11 @@ class CreateEvent extends Component {
   constructor(props){
     super(props)
     this.state = {
-     email :'',
-     password:'',
-     firstName:'',
-     lastName:'',
-     birthdate: ''
+     name :'',
+     address:'',
+     sport:'',
+     description:'',
+     information: ''
     }
     this.handleName = this.handleName.bind(this)
     this.handleAddress = this.handleAddress.bind(this)
@@ -37,19 +37,30 @@ class CreateEvent extends Component {
     this.setState({sport: event.target.value})
   }
   handleDescription(event){
-    this.setState({handleDescription: event.target.value})
+    this.setState({description: event.target.value})
   }
   handleInformation(event){
     this.setState({information: event.target.value})
   }
   handleSubmit(event){
-    event.preventDefault()
-    let data = "email="+this.state.email+"&password="+this.state.password+"&firstName="+this.state.firstName+"&lastName="+this.state.lastName+"&birthdate="+this.state.birthdate
-    fetch('http://localhost:4567/api/register',{
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+    let urlencoded = new URLSearchParams()
+    urlencoded.append("name",this.state.name)
+    urlencoded.append("address",this.state.address)
+    urlencoded.append("sport",this.state.sport)
+    urlencoded.append("description",this.state.description)
+    urlencoded.append("information",this.state.information)
+    let requestOptions = {
       method: 'POST',
-      body: JSON.stringify(data)
-    }).then(response => console.log(response.body))
-    event.preventDefault()
+      headers: myHeaders,
+      body: urlencoded,
+      redirect: 'follow'
+    }
+    fetch("http://localhost:4567/api/CreateOne", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error))  
   }  
   render(){
     return (
@@ -61,7 +72,7 @@ class CreateEvent extends Component {
           <input value={this.state.name} onChange={this.handleName} class="box" type="text" name="name" id="name" placeholder="Nom de l'événement" required /> <br/>
           <input value={this.state.address} onChange={this.handleAddress} class="box" type="text" name="address" id="address" placeholder="Adresse de l'événement" required /> <br/>
           <input value={this.state.sport} onChange={this.handleSport} class="box" type="text" name="sport" id="sport" placeholder="Choisir un sport" required /><br/>
-          <input value={this.state.description} onChange={this.handleDescription} class="box" type="text" name="lastName" id="lastName" placeholder="Description de l'événement" required /> <br/>
+          <input value={this.state.description} onChange={this.handleDescription} class="box" type="text" name="description" id="description" placeholder="Description de l'événement" required /> <br/>
           <input value={this.state.information} onChange={this.handleInformation}class="box" type="text" name="information" id="information" placeholder="Informations supplémentaires" required /> <br/>
           <input type="submit" id="submitDetails" name="submitDetails" value = "SUIVANT" class="button"/>
         </form>
