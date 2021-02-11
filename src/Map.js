@@ -10,13 +10,13 @@ const containerStyle =
 const center =
 {
     lat: 	48.856,
-    lng:    2.3521
+    lng:    2.352
 }
 
 function Map() {
     const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
-      googleMapsApiKey: "AIzaSyDu5_YAb-4IlWFGOB-_9HwciwwDQQHefcs"
+      googleMapsApiKey: ""
     })
     
     const [map, setMap] = React.useState(null)
