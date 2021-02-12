@@ -58,8 +58,9 @@ class Sport extends Component {
             <img class="logo" src="../logo.png" />
             <h1> Par quels sports seriez-vous potentiellement intéressé ?</h1>
             <Select options={this.state.options} onChange={console.log(this.state.sport)} />
-            <input type="submit" onSubmit={this.handleSubmit} id="submitDetails" name="submitDetails" value = "S'INSCRIRE" class="button"/>
-
+            <Link to='/Map'>
+              <input type="submit" onSubmit={this.handleSubmit} id="submitDetails" name="submitDetails" value = "S'INSCRIRE" class="button"/>
+          </Link>
         </div>
     )
 }
