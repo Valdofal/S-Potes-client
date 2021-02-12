@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.0.5.tgz",
     "@react-google-maps/api": "^2.1.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
