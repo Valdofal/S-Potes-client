@@ -26,7 +26,7 @@ class password extends Component {
     let urlencoded = new URLSearchParams()
     urlencoded.append("email",this.state.email)
     let requestOptions = {
-      method: 'GET',
+      method: 'POST',
       headers: myHeaders,
       body: urlencoded,
       redirect: 'follow'
@@ -35,6 +35,7 @@ class password extends Component {
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error))
+    alert("L'email a été envoyé avec succès")
    }  
   
   render(){
@@ -45,11 +46,7 @@ class password extends Component {
           <h1>MOT DE PASSE OUBLIÉ ?</h1>
           <input value={this.state.email} onChange={this.handleEmail} class="box" type="email" name="email" id="email" placeholder="Adresse e-mail" required /> <br/>
           <p> Saissisez votre adresse mail pour réinitialiser votre mot de passe</p>
-          
-
-          <Link to="/">
-                <a class="button"> ENVOYER </a>
-          </Link>
+          <input type = "submit" class="button" value = "ENVOYER"/>
           <Link to="/Inscription">
                 <p class="pasdecompte"> Vous n'êtes pas encore membre ? <a> Rejoingnez-nous' </a> </p>
           </Link>
